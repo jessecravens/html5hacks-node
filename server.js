@@ -3,7 +3,8 @@ function start() {
 	
 	var sys = require('sys'),
 	// 3rd Party Libraries
-	express = require('express')
+	express = require('express'),
+	jade = require('jade')
 	
 	// Express app
 	app = express.createServer(express.logger());
@@ -42,7 +43,7 @@ function start() {
 	app.get('/', function(req, res){
 		console.info('hello');
 		res.render('index.jade');
-	  });
+	});
 
 
  	console.log("Server started.");
