@@ -1,31 +1,22 @@
+var sys = require('sys'),
 
-function start() {	
-	
-	var sys = require('sys'),
+// 3rd Party Libraries
+express = require('express'),
+io = require('socket.io'),
+sty = require('sty/lib/sty'),
+haml = require('haml/lib/haml'),
+jade = require('jade/lib/jade'),
+express = require('express/lib/express'),
+jsdom = require("jsdom/lib/jsdom"),
+mongoose = require('mongoose'),
 
-	// 3rd Party Libraries
-	express = require('express'),
-	io = require('socket.io'),
-	sty = require('sty/lib/sty'),
-	jade = require('jade/lib/jade'),
-	express = require('express/lib/express'),
-	jsdom = require("jsdom/lib/jsdom"),
-	mongoose = require('mongoose'),
+app = express.createServer(express.logger());
 
-	app = express.createServer(express.logger());
+	app.get('/', function(request, response) {
+  		response.send('html5hacks-node');
+	});
 
-		app.get('/', function(request, response) {
-	  		response.send('html5hacks-node');
-		});
-
-		var port = process.env.PORT || 3232;
-			app.listen(port, function() {
-	  		console.log("Listening on " + port);
-		});
-	
-	 	console.log("Server started.");
-	}; 
-	
-	
-
-exports.start = start;
+	var port = process.env.PORT || 3333;
+		app.listen(port, function() {
+  		console.log("Listening on " + port);
+	});
