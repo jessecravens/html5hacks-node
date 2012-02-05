@@ -12,10 +12,10 @@
 		  		response.send('html5hacks-node');
 			});
 
-			var port = process.env.PORT || 3333;
+			var port = process.env.PORT || 3232;
 				app.listen(port, function() {
 		  		console.log("Listening on " + port);
 			});
-
+	};
 
 	exports.start = start;
