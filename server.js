@@ -1,15 +1,21 @@
-var sys = require('sys'),
+	
+	function start() {	
 
-// 3rd Party Libraries
-express = require('express')
+		var sys = require('sys'),
 
-app = express.createServer(express.logger());
+		// 3rd Party Libraries
+		express = require('express')
 
-	app.get('/', function(request, response) {
-  		response.send('html5hacks-node');
-	});
+		app = express.createServer(express.logger());
 
-	var port = process.env.PORT || 3333;
-		app.listen(port, function() {
-  		console.log("Listening on " + port);
-	});
+			app.get('/', function(request, response) {
+		  		response.send('html5hacks-node');
+			});
+
+			var port = process.env.PORT || 3333;
+				app.listen(port, function() {
+		  		console.log("Listening on " + port);
+			});
+
+
+	exports.start = start;
