@@ -1,8 +1,10 @@
 {
-  "name": "html5hacks-setup",
-  "version": "0.0.1",
-  "dependencies": {
-    "express": "2.2.0", 
-	"jade": "latest"
+    "name": "html5hacks-node"
+  , "version": "0.0.1"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.5"
+    , "stylus": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
   }
 }
