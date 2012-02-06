@@ -19,11 +19,7 @@
 				  layout: false
 				});
 			});
-
-			// app.get('/', function(request, response) {
-			// 		  		response.send('html5hacks-node');
-			// });
-			
+						
 			app.get('/', function(req, res){
 				console.info('hello');
 				res.render('index.jade');
