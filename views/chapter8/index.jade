@@ -1,8 +1,52 @@
 h2 Web Workers
-h3 #83 Basics of the UI Thread
+h3 83 Basics of the UI Thread
+
+div#selection
+
+  h4 Use Web Worker?
+  select#worker
+    option(value="yes") yes
+    option(value="no") no
+
+  h4 2D Array Row Value
+  select#row
+    option(value="10") 10
+    option(value="20") 20
+    option(value="30") 30
+    option(value="40") 40
+    option(value="50") 50
+    option(value="400") 400
+    option(value="500") 500
+    option(value="1000") 1000
+    option(value="2000") 2000
+
+  h4 2D Array Column Value
+  select#col
+    option(value="10") 10
+    option(value="20") 20
+    option(value="30") 30
+    option(value="40") 40
+    option(value="50") 50
+    option(value="400") 400
+    option(value="500") 500
+    option(value="1000") 1000
+
+div#box I am a box
+ 
+div#result()
+  p#results 2d array Output:
+    span#spinner
+    div#progressbar
+      div
+    a(href="#", rel="modal:close") Close
+
 h4 highComp.js
 script(src='https://gist.github.com/1910565.js?file=highComp.js')
 h4 spawn.js
 script(src='https://gist.github.com/1910565.js?file=spawn.js')
 h4 worker.js
 script(src='https://gist.github.com/1910565.js?file=worker.js')
+
+script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js')
+script(src='/javascripts/web-workers/highComp.js')
+script(src='/javascripts/web-workers/highComp-worker.js')

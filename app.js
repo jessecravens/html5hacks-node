@@ -37,6 +37,7 @@ var app = module.exports = express.createServer();
 
 // Routes ////////////////////////////////////////////////////////////////////////
 	app.get('/', routes.index);
+    app.get('/setup', routes.setup);
 	app.get('/chapter1', routes.chapter1);
 	app.get('/chapter2', routes.chapter2);
 	app.get('/chapter3', routes.chapter3);

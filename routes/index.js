@@ -5,7 +5,10 @@
     res.render('index', { title: 'html5hacks-node' })
   };
 
-// GET chapter 1 page
+// GET chapters
+  exports.setup = function(req, res){
+    res.render('setup', { title: 'Setting Up a Killer HTML5 Hacking Environment' })
+  };
 
   exports.chapter1 = function(req, res){
     res.render('chapter1', { title: 'Chapter 1 Hacking the Semantical Way' })
