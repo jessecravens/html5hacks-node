@@ -4,15 +4,15 @@
 
     function sort (progressFn) {
         
-    // Initialize a few things...
-    length = $('select#row').val();
-    data = [];
-    el = document.getElementById("progressbar").firstChild;
+      // Initialize a few things...
+      length = $('select#noworker').val();
+      data = [];
+      el = document.getElementById("progressbar").firstChild;
 
-    // Setup an array of random integers...
-    for (i = 0; i < length; i++) {
+      // Setup an array of random integers...
+      for (i = 0; i < length; i++) {
         data[i] = Math.floor(Math.random() * length);
-    }
+      }
 
         console.log('---------------------- sort');
         console.log(data);
@@ -47,22 +47,21 @@
     
     function sortWithWorker (progressFn) {
         
-        
-    // Initialize a few things...
-    var length = $('select#col').val();
-    data = [];
-    el = document.getElementById("progressbar").firstChild;
+      // Initialize a few things...
+      var length = $('select#work').val();
+      data = [];
+      el = document.getElementById("progressbar").firstChild;
 
-    // Setup an array of random integers...
-    for (i = 0; i < length; i++) {
+      // Setup an array of random integers...
+      for (i = 0; i < length; i++) {
         data[i] = Math.floor(Math.random() * length);
-    }
+      }
 
         (function () {
             console.log('---------------------- sortWithWorker');
             console.log(data);
             
-            var worker = new Worker('javascripts/web-workers/highComp2-worker.js');
+            var worker = new Worker('javascripts/web-workers/arraySorter-worker.js');
             
             var message = {
                 "compfn": "sortRandomArray",
@@ -80,11 +79,12 @@
         })();
     }
     
-    $('#row').change(function() {
+    $('#noworker').change(function() {
         
         start = new Date().getTime();
         
         sort(function (value, total) {
+            
             el.style.width = (100 * value / total) + "%";
             if (value >= total) {
                 console.log("Total duration: " + ((new Date().getTime() - start) / 1000) + " seconds");
@@ -92,11 +92,13 @@
         });
     });
     
-    $('#col').change(function() {
+    $('#work').change(function() {
         
+        console.log('test');      
          start = new Date().getTime();
  
          sortWithWorker(function (value, total) {
+            
             el.style.width = (100 * value / total) + "%";
             if (value >= total) {
                 console.log("Total duration: " + ((new Date().getTime() - start) / 1000) + " seconds");

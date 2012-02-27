@@ -1,8 +1,8 @@
 h2 Web Workers
 h3 83 Basics of the UI Thread
 
-div#selection
-
+div#box I am a box
+div#twodarray
   h4 Use Web Worker?
   select#worker
     option(value="yes") yes
@@ -31,8 +31,34 @@ div#selection
     option(value="500") 500
     option(value="1000") 1000
 
-div#box I am a box
- 
+div#arraysort
+
+  h4 Sort Array
+  select#noworker
+    option(value="10") 10
+    option(value="20") 20
+    option(value="30") 30
+    option(value="40") 40
+    option(value="50") 50
+    option(value="400") 400
+    option(value="500") 500
+    option(value="1000") 1000
+    option(value="2000") 2000
+
+  h4 Sort Array with Web Worker
+  select#work
+    option(value="10") 10
+    option(value="20") 20
+    option(value="30") 30
+    option(value="40") 40
+    option(value="50") 50
+    option(value="400") 400
+    option(value="500") 500
+    option(value="1000") 1000
+    option(value="2000") 2000
+    option(value="3000") 3000
+    option(value="4000") 4000
+
 div#result()
   p#results 2d array Output:
     span#spinner
@@ -48,5 +74,7 @@ h4 worker.js
 script(src='https://gist.github.com/1910565.js?file=worker.js')
 
 script(src='//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js')
-script(src='/javascripts/web-workers/highComp.js')
-script(src='/javascripts/web-workers/highComp-worker.js')
+script(src='/javascripts/web-workers/twoDarray.js')
+script(src='/javascripts/web-workers/twoDarray-worker.js')
+script(src='/javascripts/web-workers/arraySorter.js')
+script(src='/javascripts/web-workers/arraySorter-worker.js')

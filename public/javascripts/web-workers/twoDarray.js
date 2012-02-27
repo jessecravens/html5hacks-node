@@ -1,7 +1,5 @@
     function process() {
         
-
-        
         // NOT USING A WEB WORKER
         if ($('select#worker').val() == "no"){
             
@@ -26,10 +24,6 @@
             //print results of array in result div
             $('#results').text(a.toString());
             
-
-  		
-
-            
         // USE A WEB WORKER    
         }else{
             
@@ -38,7 +32,7 @@
             var r = $('select#row').val();
     	    var c = $('select#col').val();
             
-            var worker = new Worker('javascripts/web-workers/highComp-worker.js');
+            var worker = new Worker('javascripts/web-workers/twoDarray-worker.js');
             
             var message = {
 				"compfn": "create2Darray",
@@ -51,18 +45,13 @@
             worker.onmessage = function (event) {
 	     	    // print results of array in result div
                 var data = event.data 
-                            //open the modal
-            $('#result').modal();
+                //open the modal
+                $('#result').modal();
                 
                 // Must stringify before appending to DOM
                 $('#results').text(JSON.stringify(data));
 
 	   	    };
-            
-
-            
-            // loading spinner - using spin.js
-
         }
     }
 
